@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FoTo</string>
+
+    <string-array name="type">
+        <item>自行车</item>
+        <item>电动自行车</item>
+        <item>摩托车</item>
+    </string-array>
+</resources>

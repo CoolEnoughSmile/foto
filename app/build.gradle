@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+
+    defaultConfig {
+        applicationId "com.coolenoughsmile.foto"
+        minSdkVersion 16
+        targetSdkVersion 24
+
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    //3.5.5：请务必查看下面注释[1]
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile 'com.blankj:utilcode:1.7.1'
+    compile name: 'SMSSDK-3.0.0', ext: 'aar'
+    compile name: 'SMSSDKGUI-3.0.0', ext: 'aar'
+    compile files('libs/BaiduLBS_Android.jar')
+    //时间选择器
+    compile 'com.contrarywind:Android-PickerView:3.2.5'
+    //普通选择器
+    compile('cn.qqtheme.framework:WheelPicker:1.5.0') { exclude group: 'com.android.support' }
+    //头像控件
+    compile 'com.facebook.fresco:fresco:1.4.0'
+    //图片选择器
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.0'
+    //    compile 'com.github.YancyYe:GalleryPick:1.2.1'
+    //    compile 'gun0912.ted:tedbottompicker:1.0.2'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
+}

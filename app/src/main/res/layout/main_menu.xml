@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="#1b1b1b"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#1e1e1e"
+        android:paddingBottom="20dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/menu_logo"
+            android:layout_centerInParent="true"
+            fresco:failureImage="@drawable/default_head"
+            fresco:placeholderImage="@drawable/default_head"
+            fresco:roundAsCircle="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:id="@+id/usernameview"
+            android:layout_gravity="center"
+            android:textColor="#ff959595"
+            android:textSize="16.0sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/menu_btn"
+        android:orientation="horizontal"
+        android:id="@+id/menu_modify_information_btn"
+        android:paddingLeft="30dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/sideslip_icon_modify_data"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="修改资料"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:gravity="center_vertical"
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/sideslip_icon_return" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/menu_btn"
+        android:id="@+id/menu_owner_identification_btn"
+        android:paddingLeft="30dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/sideslip_icon_owner_certification" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="车主认证"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:gravity="center_vertical"
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/sideslip_icon_return" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_modify_password_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/menu_btn"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/sideslip_icon_modify_password" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="修改密码"
+            android:textColor="#ffffff"
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/sideslip_icon_return" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:layout_marginTop="180dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/menu_logout_btn"
+        android:background="@drawable/menu_btn"
+        android:paddingLeft="30dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/sideslip_icon_quit" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="退出登录"
+            android:textColor="#ffffff"
+            android:paddingLeft="5dp"
+            android:gravity="center_vertical"
+            android:textSize="16.0sp"
+            android:id="@+id/textView2" />
+
+
+    </LinearLayout>
+</LinearLayout>
