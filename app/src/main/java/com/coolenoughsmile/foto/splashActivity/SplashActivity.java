@@ -49,6 +49,7 @@ public class SplashActivity extends BaseActivity {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 }
                 finish();
+
             }
         }, 1200);
     }
