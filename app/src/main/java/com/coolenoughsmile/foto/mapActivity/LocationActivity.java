@@ -137,7 +137,7 @@ public class LocationActivity extends BaseActivity implements AdapterView.OnItem
         bmapView.setPadding(10, 0, 0, 10);
         bmapView.showZoomControls(false);
         // 设置缩放比例(500米)
-        MapStatusUpdate msu = MapStatusUpdateFactory.zoomTo(15.0f);
+        MapStatusUpdate msu = MapStatusUpdateFactory.zoomTo(19.0f);
         mBaiduMap.setMapStatus(msu);
         mBaiduMap.setOnMapTouchListener(touchListener);
 

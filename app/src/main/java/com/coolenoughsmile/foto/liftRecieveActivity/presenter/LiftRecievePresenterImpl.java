@@ -11,7 +11,7 @@ import com.coolenoughsmile.foto.liftRecieveActivity.view.LiftRecieveView;
  * Created by CoolEnoughSmile on 2017/8/5.
  */
 
-public class LiftRecievePresenterImpl implements LiftRecievePresenter {
+public class LiftRecievePresenterImpl implements LiftRecievePresenter,LiftRecieveModel.OnloadDataListener{
     private LiftRecieveModel liftRecieveModel;
     private LiftRecieveView liftRecieveView;
 
@@ -21,7 +21,17 @@ public class LiftRecievePresenterImpl implements LiftRecievePresenter {
     }
 
     @Override
-    public OrderAdapter getOrderAdapter(Context context) {
-        return  liftRecieveModel.getOrderAdapter(context);
+    public void loadData(Context context) {
+        liftRecieveModel.loadData(context,this);
+    }
+
+    @Override
+    public void showMsg(String msg) {
+        liftRecieveView.showMsg(msg);
+    }
+
+    @Override
+    public void setData(OrderAdapter orderAdapter) {
+        liftRecieveView.setData(orderAdapter);
     }
 }

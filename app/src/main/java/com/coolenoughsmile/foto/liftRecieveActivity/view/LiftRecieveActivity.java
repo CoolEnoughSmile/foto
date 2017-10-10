@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.coolenoughsmile.foto.R;
 import com.coolenoughsmile.foto.base.BaseActivity;
 import com.coolenoughsmile.foto.liftRecieveActivity.model.OrderAdapter;
@@ -31,7 +32,7 @@ public class LiftRecieveActivity extends BaseActivity implements LiftRecieveView
 
         initView();
         liftRecievePresenter=new LiftRecievePresenterImpl(this);
-        loadData();
+        liftRecievePresenter.loadData(this);
         setListener();
         setOnFreshListener();
     }
@@ -52,7 +53,7 @@ public class LiftRecieveActivity extends BaseActivity implements LiftRecieveView
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                loadData();
+                liftRecievePresenter.loadData(LiftRecieveActivity.this);
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -64,8 +65,14 @@ public class LiftRecieveActivity extends BaseActivity implements LiftRecieveView
         swipeRefreshLayout= (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
     }
 
-    private void loadData(){
-        oderAdapter=liftRecievePresenter.getOrderAdapter(this);
+    @Override
+    public void showMsg(String msg) {
+        ToastUtils.showShort(msg);
+    }
+
+    @Override
+    public void setData(OrderAdapter adapter) {
+        oderAdapter=adapter;
         recyclerView.setAdapter(oderAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recyclerView.setItemAnimator(new DefaultItemAnimator());

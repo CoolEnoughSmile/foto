@@ -18,6 +18,7 @@ import com.coolenoughsmile.foto.R;
 import com.coolenoughsmile.foto.base.BaseActivity;
 import com.coolenoughsmile.foto.registerActivity.presenter.RegisterPresenter;
 import com.coolenoughsmile.foto.registerActivity.presenter.RegisterPresenterImpl;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
@@ -34,6 +35,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
     private TextView agreement_view;
     private TimeCount mTimeCount;
     private ProgressBar pb;
+    private SimpleDraweeView logo;
 
     private static final String TAG = "RegisterActivity";
 
@@ -157,6 +159,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
         agreement_view= (TextView) findViewById(R.id.agreement_view);
         back_btn= (Button) findViewById(R.id.back_btn);
         pb= (ProgressBar) findViewById(R.id.progressBar);
+        logo= (SimpleDraweeView) findViewById(R.id.logo);
+        logo.setImageURI("http://bmob-cdn-13292.b0.upaiyun.com/2017/08/04/46e29336d6d24f929416380afb03aa33.jpg");
    }
 
     @Override

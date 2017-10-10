@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.coolenoughsmile.foto.R;
@@ -46,6 +47,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,M
     private LinearLayout menu_modify_information_btn,menu_owner_identification_btn,menu_modify_password_btn,menu_logout_btn;
     private SimpleDraweeView menu_logo,content_logo;
     private MainPresenter mainPresenter;
+    private TextView username_view;
 
     private static String DEFAULT_HEAD ="http://bmob-cdn-13292.b0.upaiyun.com/2017/08/04/46e29336d6d24f929416380afb03aa33.jpg";
     @Override
@@ -57,6 +59,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,M
         initView();
         setListener();
         loadUserLogo();
+        loadElseName();
+    }
+
+    private void loadElseName() {
+        User user=BmobUser.getCurrentUser(User.class);
+        if (user.getmElsename()!=null&&!"".equals(user.getmElsename())){
+            username_view.setText(user.getmElsename());
+        }
     }
 
     private void loadUserLogo() {
@@ -94,6 +104,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,M
         menu_logout_btn= (LinearLayout) findViewById(R.id.menu_logout_btn);
         menu_logo= (SimpleDraweeView) findViewById(R.id.menu_logo);
         content_logo= (SimpleDraweeView) findViewById(R.id.content_logo);
+        username_view= (TextView) findViewById(R.id.username_view);
     }
 
     @Override

@@ -7,5 +7,10 @@ import android.content.Context;
  */
 
 public interface LiftRecieveModel {
-    OrderAdapter getOrderAdapter(Context context);
+    void loadData(Context context,OnloadDataListener onloadDataListener);
+
+    interface OnloadDataListener{
+        void showMsg(String msg);
+        void setData(OrderAdapter orderAdapter);
+    }
 }

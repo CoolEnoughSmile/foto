@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:orientation="vertical"
@@ -40,12 +41,15 @@
                 </TextView>
             </RelativeLayout>
 
-            <com.wx.ovalimageview.RoundImageView
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/default_head"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                fresco:roundAsCircle="true"
+                fresco:failureImage="@drawable/default_head"
+                fresco:placeholderImage="@drawable/default_head" />
         </LinearLayout>
 
         <LinearLayout

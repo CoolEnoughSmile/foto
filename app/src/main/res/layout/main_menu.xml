@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:id="@+id/usernameview"
+            android:id="@+id/username_view"
             android:layout_gravity="center"
             android:textColor="#ff959595"
             android:textSize="16.0sp"

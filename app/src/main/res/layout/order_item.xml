@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="#d6cdcd"
+    android:layout_marginBottom="2dp">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:layout_width="45dp"
@@ -30,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/departure_tv"
+                android:maxLines="1"
                 android:text="天津理工大学"/>
         </LinearLayout>
         <LinearLayout
@@ -44,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/destination_tv"
+                android:maxLines="1"
                 android:text="天津工业大学"/>
         </LinearLayout>
     </LinearLayout>

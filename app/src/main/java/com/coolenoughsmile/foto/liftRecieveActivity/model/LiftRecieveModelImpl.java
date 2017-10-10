@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.coolenoughsmile.foto.liftActivity.model.Order;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -18,8 +17,7 @@ import cn.bmob.v3.listener.FindListener;
 
 public class LiftRecieveModelImpl implements LiftRecieveModel {
     @Override
-    public OrderAdapter getOrderAdapter(Context context) {
-        final List<Order> list=new ArrayList<>();
+    public void loadData(final Context context, final OnloadDataListener onloadDataListener) {
         BmobQuery<Order> query=new BmobQuery<>();
         query.addWhereEqualTo("status","等待接单");
         query.setLimit(20);
@@ -27,13 +25,13 @@ public class LiftRecieveModelImpl implements LiftRecieveModel {
             @Override
             public void done(List<Order> object, BmobException e) {
                 if(e==null){
-                    list.addAll(object);
-                    Log.e("bmob","成功：！");
+                    onloadDataListener.setData(new OrderAdapter(object,context));
+                    Log.e("bmob","成功：！"+object.size());
                 }else{
+                    onloadDataListener.showMsg("加载失败！");
                     Log.e("bmob","失败：",e);
                 }
             }
         });
-        return new OrderAdapter(list,context);
     }
 }
